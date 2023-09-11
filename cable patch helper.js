@@ -26,7 +26,7 @@ REVISION HISTORY:
         const userInput3 = prompt('Enter the text to replace "03_project_name":');
         const userInput4 = prompt('Enter the text to replace "04_FBN":');
         const userInput5 = prompt('Enter the text to replace "05_justification_for_change_and_purpose_of_project":');
-        const userInput6 = prompt('Enter the text to replace "06_Is_this_MCM_a_continuation_of_a_previous_MCM_if_yes_list_them_below_and_attach_them_in_related_items":');
+        const userInput6 = "No"; // Predefined input for 06_Is_this_MCM_a_continuation_of_a_previous_MCM_if_yes_list_them_below_and_attach_them_in_related_items
         const userInput7 = prompt('Enter the text to replace "07_primary_sim_URL":');
         const userInput8 = "N/A"; // Predefined input for 08_mobius_link
         const userInput9 = "N/A"; // Predefined input for 09_NARG_tickets_Link
