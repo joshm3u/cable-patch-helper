@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Cable Patching MCM helper
 // @namespace    https://mcm.amazon.com
-// @version      0.2
+// @version      0.2a
 // @description  Collect input and fill the cable patch MCM template
 // @author       chengng@
 // @match      https://mcm.amazon.com/cms/new?from_template=7b61ac86-0baa-44af-b9f5-be930912b72d
@@ -14,6 +14,7 @@
 REVISION HISTORY:
 0.1 - 2023-09-11 - chengng@ - Initial setup for the patching helper
 0.2 - 2023-09-11 - chengng@ - Update and test
+0.2a - 2023-09-11 - chengng@ - small adjustment
 */
 
 (function() {
