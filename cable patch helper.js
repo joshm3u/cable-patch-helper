@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Cable Patch MCM helper
 // @namespace    http://mcm.amazon.com/
-// @version      0.1
-// @description  Cable Patch MCM helper
+// @version      0.2
+// @description  Cable Patch helper
 // @author       chengng@
 // @match        https://mcm.amazon.com/cms/new?from_template=7b61ac86-0baa-44af-b9f5-be930912b72d
 // @updateURL    https://raw.githubusercontent.com/joshm3u/cable-patch-helper/main/cable%20patch%20helper.js
@@ -13,6 +13,8 @@
 /*
 REVISION HISTORY:
 0.1 - 2023-09-13 - chengng@ - Initial setup for the helper
+0.2 - 2023-09-19 - chengng@ - Remove approvers and Add Tier selection based on the MCM type
+
 */
 
 (function() {
@@ -53,6 +55,19 @@ REVISION HISTORY:
         if (inputField) {
             inputField.value = inputField.value.replace(placeholder, replacement);
         }
+    }
+
+            // Function to click the "Delete" buttons
+    function clickDeleteButtons() {
+        var deleteButtons = document.querySelectorAll('a.delete-approver'); // Select all elements with class 'delete-approver'
+
+        // Loop through the delete buttons and click them
+        deleteButtons.forEach(function(button) {
+            var dataApprover = button.getAttribute('data-approver');
+            if (dataApprover === 'l3-id-approval') {
+                button.click();
+            }
+        });
     }
 
     // Read user inputs from the clipboard
@@ -163,4 +178,20 @@ REVISION HISTORY:
         // Display a final reminder alert
         alert("Don't forget to do following manual tasks:\nA)Double check the above information before submitting for approval\nB)Update 15_all_hostnames\nC)Update 16_patch_panels_locations\nD)Update 19_NDE cutsheet\nE)Adjust 21_detailed onsite plan accordingly");
     });
+
+    // Function to select an option by value in a select element by ID
+function selectOptionByValue(selectId, value) {
+    const selectElement = document.getElementById(selectId);
+    if (selectElement) {
+        for (const option of selectElement.options) {
+            if (option.value === value) {
+                option.selected = true;
+                break;
+            }
+        }
+    }
+}
+
+// Call the function to select "Tier 3" in the 'tier' select element
+selectOptionByValue('tier', 'Tier 3');
 })();
