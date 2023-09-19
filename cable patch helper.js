@@ -179,6 +179,11 @@ REVISION HISTORY:
         alert("Don't forget to do following manual tasks:\nA)Double check the above information before submitting for approval\nB)Update 15_all_hostnames\nC)Update 16_patch_panels_locations\nD)Update 19_NDE cutsheet\nE)Adjust 21_detailed onsite plan accordingly");
     });
 
+            // Run the function when the page is fully loaded
+    window.addEventListener('load', function() {
+        clickDeleteButtons();
+    });
+
     // Function to select an option by value in a select element by ID
 function selectOptionByValue(selectId, value) {
     const selectElement = document.getElementById(selectId);
