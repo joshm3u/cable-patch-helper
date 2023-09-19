@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Cable Patch MCM helper
 // @namespace    http://mcm.amazon.com/
-// @version      0.2
+// @version      0.3
 // @description  Cable Patch helper
 // @author       chengng@
 // @match        https://mcm.amazon.com/cms/new?from_template=7b61ac86-0baa-44af-b9f5-be930912b72d
@@ -14,7 +14,7 @@
 REVISION HISTORY:
 0.1 - 2023-09-13 - chengng@ - Initial setup for the helper
 0.2 - 2023-09-19 - chengng@ - Remove approvers and Add Tier selection based on the MCM type
-
+0.3 - 2023-09-19 - chengng@ - Update the approvers
 */
 
 (function() {
@@ -64,7 +64,7 @@ REVISION HISTORY:
         // Loop through the delete buttons and click them
         deleteButtons.forEach(function(button) {
             var dataApprover = button.getAttribute('data-approver');
-            if (dataApprover === 'l3-id-approval') {
+            if (dataApprover === 'l3-cluster-leader' || dataApprover === 'l3-id-approval') {
                 button.click();
             }
         });
